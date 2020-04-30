@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { Pelicula } from './../../modelo/Pelicula';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pelicula-listado.component.css']
 })
 export class PeliculaListadoComponent implements OnInit {
-
-  constructor() { }
+  peliculaSeleccionada: Pelicula;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  seleccionarPelicula(pelicula: Pelicula) {
+    this.peliculaSeleccionada = pelicula;
+  }
+
+  navegarA(link: string) {
+    this.router.navigate([link]);
+  }
 }

@@ -1,1 +1,5 @@
-<app-tabla-peliculas></app-tabla-peliculas>
+<div class="container">
+  <app-tabla-peliculas (seleccionarPelicula)="seleccionarPelicula($event)"></app-tabla-peliculas>
+  <app-detalle-pelicula *ngIf="peliculaSeleccionada" [pelicula]="peliculaSeleccionada"></app-detalle-pelicula>
+</div>
+<button (click)="navegarA('bienvenido')" mat-raised-button color="primary">INICIO</button>
