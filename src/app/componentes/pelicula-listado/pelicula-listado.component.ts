@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pelicula } from './../../modelo/Pelicula';
-import { Component, OnInit } from '@angular/core';
+import { PeliculasService } from './../../servicios/peliculas.service';
 
 @Component({
   selector: 'app-pelicula-listado',
@@ -9,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculaListadoComponent implements OnInit {
   peliculaSeleccionada: Pelicula;
-  constructor(private router: Router) { }
+  listadoPeliculas: Array<Pelicula>;
+  constructor(private router: Router, private peliculaService: PeliculasService) { }
 
   ngOnInit(): void {
+    this.listadoPeliculas = this.peliculaService.obtenerPeliculas();
   }
 
   seleccionarPelicula(pelicula: Pelicula) {
@@ -21,4 +24,11 @@ export class PeliculaListadoComponent implements OnInit {
   navegarA(link: string) {
     this.router.navigate([link]);
   }
+
+  borrarPelicula(pelicula: Pelicula) {
+    this.peliculaService.borrarPelicula(pelicula);
+    this.peliculaSeleccionada = undefined;
+    this.listadoPeliculas = Array.from(this.peliculaService.obtenerPeliculas());
+  }
+
 }

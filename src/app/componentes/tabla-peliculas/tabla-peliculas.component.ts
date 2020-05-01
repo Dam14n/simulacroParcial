@@ -1,7 +1,5 @@
-import { Router } from '@angular/router';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pelicula } from './../../modelo/Pelicula';
-import { PeliculasService } from './../../servicios/peliculas.service';
 
 @Component({
   selector: 'app-tabla-peliculas',
@@ -10,14 +8,13 @@ import { PeliculasService } from './../../servicios/peliculas.service';
 })
 export class TablaPeliculasComponent implements OnInit {
   @Output() seleccionarPelicula = new EventEmitter<Pelicula>();
-  listadoPeliculas: Array<Pelicula>;
+  @Input() listadoPeliculas: Array<Pelicula>;
   displayedColumns: string[] = ['id', 'nombre', 'tipo', 'fechaDeEstreno', 'cantidadDePublico', 'foto', 'seleccionar'];
 
-  constructor(private peliculaService: PeliculasService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.listadoPeliculas = this.peliculaService.obtenerPeliculas();
   }
 
   onSeleccionarPelicula(pelicula: Pelicula) {

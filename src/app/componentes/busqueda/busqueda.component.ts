@@ -1,5 +1,7 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pelicula } from './../../modelo/Pelicula';
+import { PeliculasService } from './../../servicios/peliculas.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./busqueda.component.css']
 })
 export class BusquedaComponent implements OnInit {
+  listadoPeliculas: Array<Pelicula>;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private peliculaService: PeliculasService) {
+    this.listadoPeliculas = this.peliculaService.obtenerPeliculas();
+  }
 
   ngOnInit(): void {
   }
