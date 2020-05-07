@@ -41,7 +41,6 @@ export class PeliculasService {
     this.peliculas.push(pelicula2);
     this.peliculas.push(pelicula3);
     this.peliculas.push(pelicula4);
-
   }
 
   guardarPelicula(pelicula: Pelicula) {

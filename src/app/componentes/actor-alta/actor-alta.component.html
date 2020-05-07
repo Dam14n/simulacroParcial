@@ -1,2 +1,54 @@
 <app-menu></app-menu>
-<app-tabla-paises [listadoPaises]="paises"></app-tabla-paises>
+<div class="main-container">
+  <mat-card class="card">
+    <form [formGroup]="signUpForm" class="form-signin">
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese un id</mat-label>
+        <input matInput placeholder="Id" [formControl]="signUpForm.controls.id" type="number" required>
+        <mat-error *ngIf="signUpForm.controls.id.invalid">
+          Por favor inserte un id!!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese un nombre</mat-label>
+        <input matInput placeholder="Nombre" [formControl]="signUpForm.controls.nombre" required>
+        <mat-error *ngIf="signUpForm.controls.nombre.invalid">
+          Por favor inserte un nombre!!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese un apellido</mat-label>
+        <input matInput placeholder="Apellido" [formControl]="signUpForm.controls.apellido" required>
+        <mat-error *ngIf="signUpForm.controls.apellido.invalid">
+          Por favor inserte un apellido!!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese un sexo</mat-label>
+        <mat-select [formControl]="signUpForm.controls.sexo">
+          <mat-option value="0">FEMENINO</mat-option>
+          <mat-option value="1">MASCULINO</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese una fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="signUpForm.controls.nacimiento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione un pais de la lista de paises!!!</mat-label>
+        <input matInput placeholder="Pais de origen" [formControl]="signUpForm.controls.pais" readonly required>
+        <mat-error *ngIf="signUpForm.controls.pais.invalid">
+          Por favor seleccione un pais!!
+        </mat-error>
+      </mat-form-field>
+      <div class="footer">
+        <button [ngClass]="{'button-dissabled': signUpForm.invalid}" mat-raised-button (click)="guardarActor()" 
+          [disabled]="signUpForm.invalid">CREAR</button>
+        <button mat-raised-button (click)="cancelar()">CANCELAR</button>
+      </div>
+    </form>
+  </mat-card>
+  <app-tabla-paises [listadoPaises]="paises" (seleccionarPais)="onSeleccionarPais($event)"></app-tabla-paises>
+</div>

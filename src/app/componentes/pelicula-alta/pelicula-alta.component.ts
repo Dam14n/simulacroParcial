@@ -37,7 +37,7 @@ export class PeliculaAltaComponent implements OnInit {
 
   guardarPelicula() {
     const controls = this.signUpForm.controls;
-    const pelicula = new Pelicula(controls.id.value, controls.nombre.value, controls.tipo.value, controls.fecha.value, controls.publico.value, '');
+    const pelicula = new Pelicula(controls.id.value, controls.nombre.value, controls.tipo.value, controls.fecha.value, controls.publico.value, './assets/pelicula.png');
     pelicula.agregarActor(this.actor);
     this.peliculaService.guardarPelicula(pelicula);
     this.router.navigate(['']);

@@ -1,0 +1,28 @@
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 400px;
+  margin: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer button {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card {
+  height: fit-content;
+}
