@@ -1,3 +1,4 @@
+import { TipoPelicula } from './../../modelo/TipoPelicula';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pelicula } from './../../modelo/Pelicula';
 
@@ -10,6 +11,7 @@ export class TablaPeliculasComponent implements OnInit {
   @Output() seleccionarPelicula = new EventEmitter<Pelicula>();
   @Input() listadoPeliculas: Array<Pelicula>;
   displayedColumns: string[] = ['id', 'nombre', 'tipo', 'fechaDeEstreno', 'cantidadDePublico', 'foto', 'seleccionar'];
+  Tipo = TipoPelicula;
 
   constructor() {
   }

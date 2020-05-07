@@ -17,3 +17,17 @@
   justify-content: center;
   margin: 20px;
 }
+
+app-tabla-peliculas {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+app-detalle-pelicula {
+  width: 20%;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

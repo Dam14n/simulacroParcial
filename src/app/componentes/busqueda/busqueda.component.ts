@@ -1,3 +1,5 @@
+import { ActorService } from './../../servicios/actor.service';
+import { Actor } from './../../modelo/Actor';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pelicula } from './../../modelo/Pelicula';
@@ -10,9 +12,11 @@ import { PeliculasService } from './../../servicios/peliculas.service';
 })
 export class BusquedaComponent implements OnInit {
   listadoPeliculas: Array<Pelicula>;
+  listadoActores: Array<Actor>;
 
-  constructor(private router: Router, private peliculaService: PeliculasService) {
+  constructor(private router: Router, private peliculaService: PeliculasService, private actorService: ActorService) {
     this.listadoPeliculas = this.peliculaService.obtenerPeliculas();
+    this.listadoActores = this.actorService.obtenerActores();
   }
 
   ngOnInit(): void {

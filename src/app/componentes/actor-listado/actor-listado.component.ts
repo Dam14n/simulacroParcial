@@ -1,3 +1,5 @@
+import { ActorService } from './../../servicios/actor.service';
+import { Actor } from './../../modelo/Actor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actor-listado.component.css']
 })
 export class ActorListadoComponent implements OnInit {
+  listadoActores: Array<Actor>;
 
-  constructor() { }
+  constructor(private actorService: ActorService) {
+    this.listadoActores = this.actorService.obtenerActores();
+  }
 
   ngOnInit(): void {
   }

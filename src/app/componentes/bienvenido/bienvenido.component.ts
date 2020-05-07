@@ -1,5 +1,5 @@
+import { PeliculasService } from './../../servicios/peliculas.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenido',
@@ -8,13 +8,10 @@ import { Router } from '@angular/router';
 })
 export class BienvenidoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private peliculaService: PeliculasService) { }
 
   ngOnInit(): void {
-  }
-
-  navegarA(link: string) {
-    this.router.navigate([link]);
+    this.peliculaService.cargarPeliculas();
   }
 
 }

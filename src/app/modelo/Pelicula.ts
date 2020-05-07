@@ -1,8 +1,10 @@
+import { Actor } from './Actor';
 import { TipoPelicula } from './TipoPelicula';
 export class Pelicula {
+    private actores: Array<Actor>;
 
     constructor(private _id: Number, private _nombre: string, private _tipo: TipoPelicula, private _fechaDeEstreno: Date, private _cantidadDePublico: number, private _foto: string) {
-
+        this.actores = new Array<Actor>();
     }
 
     public get id(): Number {
@@ -41,5 +43,9 @@ export class Pelicula {
     }
     public set nombre(value: string) {
         this._nombre = value;
+    }
+
+    public agregarActor(actor: Actor) {
+        this.actores.push(actor);
     }
 }

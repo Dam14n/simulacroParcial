@@ -3,3 +3,17 @@
   justify-content: center;
   margin: 20px;
 }
+
+app-tabla-peliculas {
+  margin: 20px;
+}
+
+.listado-container {
+  display: flex;
+  flex-direction: column;
+}
+
+app-tabla-actores {
+  margin: 20px;
+  align-self: center;
+}

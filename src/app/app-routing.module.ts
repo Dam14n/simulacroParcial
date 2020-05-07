@@ -20,7 +20,7 @@ const MiRuteo = [
       { path: 'listado', component: PeliculaListadoComponent }]
   },
   {
-    path: 'actor',
+    path: 'actores',
     children:
       [{ path: 'alta', component: ActorAltaComponent },
       { path: 'listado', component: ActorListadoComponent }]
