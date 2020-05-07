@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-detalle-pais',
@@ -6,11 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./detalle-pais.component.css']
 })
 export class DetallePaisComponent implements OnInit {
+  @Output() disableCountry = new EventEmitter<any>();
   @Input() pais: any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDisabledCountry() {
+    this.disableCountry.emit(this.pais);
   }
 
 }

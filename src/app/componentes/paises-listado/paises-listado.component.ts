@@ -14,6 +14,10 @@ export class PaisesListadoComponent implements OnInit {
   constructor(private paisesService: PaisesServiceService) { }
 
   ngOnInit(): void {
+    this.obtenerPaises();
+  }
+
+  obtenerPaises() {
     this.paisesService.obtenerPaises().then(paises => {
       this.paises = paises;
     });
@@ -24,4 +28,10 @@ export class PaisesListadoComponent implements OnInit {
     this.pais = pais;
   }
 
+  onDisabledCountry(pais: any) {
+    this.paisesService.borrarPais(pais);
+    this.mostrarPais = false;
+    this.obtenerPaises();
+
+  }
 }
