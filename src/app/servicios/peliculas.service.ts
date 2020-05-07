@@ -25,6 +25,9 @@ export class PeliculasService {
   }
 
   cargarPeliculas() {
+    if (this.peliculas.length) {
+      return;
+    }
     const actores = this.actorService.obtenerActores();
     const pelicula1 = new Pelicula(1, 'Star Wars Episodio 5', TipoPelicula.OTROS, new Date(), 153210324564, './assets/episodio5.jpg');
     const pelicula2 = new Pelicula(2, 'Star Wars Episodio 7', TipoPelicula.OTROS, new Date(), 153210324564, './assets/episodio7.jpg');

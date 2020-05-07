@@ -40,7 +40,7 @@ export class PeliculaAltaComponent implements OnInit {
     const pelicula = new Pelicula(controls.id.value, controls.nombre.value, controls.tipo.value, controls.fecha.value, controls.publico.value, '');
     pelicula.agregarActor(this.actor);
     this.peliculaService.guardarPelicula(pelicula);
-    this.router.navigate(['/peliculas/alta']);
+    this.router.navigate(['']);
   }
 
   onSeleccionarActor(actor: Actor) {
