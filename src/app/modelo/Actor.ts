@@ -7,7 +7,8 @@ export class Actor {
         private _apellido: string,
         private _sexo: Sexo,
         private _fechaDeNacimiento: Date,
-        private _foto: string) { }
+        private _foto: string,
+        private _paisDeOrigen?: string) { }
 
     public get foto(): string {
         return this._foto;
@@ -44,6 +45,13 @@ export class Actor {
     }
     public set id(value: number) {
         this._id = value;
+    }
+
+    public get paisDeOrigen(): string {
+        return this._paisDeOrigen;
+    }
+    public set paisDeOrigen(value: string) {
+        this._paisDeOrigen = value;
     }
 
 }

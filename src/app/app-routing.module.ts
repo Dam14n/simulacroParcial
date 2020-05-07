@@ -1,3 +1,4 @@
+import { PaisesListadoComponent } from './componentes/paises-listado/paises-listado.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
@@ -24,7 +25,12 @@ const MiRuteo = [
     children:
       [{ path: 'alta', component: ActorAltaComponent },
       { path: 'listado', component: ActorListadoComponent }]
-  }];
+  },
+  {
+    path: 'paises',
+    children: [{ path: 'listado', component: PaisesListadoComponent }]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(MiRuteo)],

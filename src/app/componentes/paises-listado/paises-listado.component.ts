@@ -1,14 +1,12 @@
 import { PaisesServiceService } from './../../servicios/paises-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Actor } from './../../modelo/Actor';
 
 @Component({
-  selector: 'app-actor-alta',
-  templateUrl: './actor-alta.component.html',
-  styleUrls: ['./actor-alta.component.css']
+  selector: 'app-paises-listado',
+  templateUrl: './paises-listado.component.html',
+  styleUrls: ['./paises-listado.component.css']
 })
-export class ActorAltaComponent implements OnInit {
-  listadoActores: Array<Actor>;
+export class PaisesListadoComponent implements OnInit {
   paises = [];
 
   constructor(private paisesService: PaisesServiceService) { }
