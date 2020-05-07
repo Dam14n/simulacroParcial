@@ -1,2 +1,5 @@
 <app-menu></app-menu>
-<app-tabla-paises [listadoPaises]="paises"></app-tabla-paises>
+<div class="paises-container">
+  <app-tabla-paises [listadoPaises]="paises" (seleccionarPais)="onSeleccionarPais($event)"></app-tabla-paises>
+  <app-detalle-pais *ngIf="mostrarPais" [pais]="pais"></app-detalle-pais>
+</div>

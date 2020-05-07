@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tabla-paises',
@@ -6,12 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tabla-paises.component.css']
 })
 export class TablaPaisesComponent implements OnInit {
+  @Output() seleccionarPais = new EventEmitter<any>();
   @Input() listadoPaises: Array<any>;
-  displayedColumns: string[] = ['name', 'capital', 'region', 'population', 'flag'];
+  displayedColumns: string[] = ['name', 'capital', 'region', 'population', 'flag', 'seleccionar'];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSeleccionarPais(pais: any) {
+    this.seleccionarPais.emit(pais);
   }
 
 }

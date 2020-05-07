@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaisesListadoComponent implements OnInit {
   paises = [];
+  pais: any;
+  mostrarPais = false;
 
   constructor(private paisesService: PaisesServiceService) { }
 
@@ -15,6 +17,11 @@ export class PaisesListadoComponent implements OnInit {
     this.paisesService.obtenerPaises().then(paises => {
       this.paises = paises;
     });
+  }
+
+  onSeleccionarPais(pais: any) {
+    this.mostrarPais = true;
+    this.pais = pais;
   }
 
 }

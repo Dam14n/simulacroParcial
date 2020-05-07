@@ -1,0 +1,13 @@
+.paises-container {
+  display: flex;
+}
+
+app-tabla-paises {
+  margin: 20px;
+  width: 50%;
+}
+
+app-detalle-pais {
+  margin: 20px;
+  width: 50%;
+}

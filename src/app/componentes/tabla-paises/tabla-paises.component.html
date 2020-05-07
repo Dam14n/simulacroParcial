@@ -24,6 +24,11 @@
       <th mat-header-cell *matHeaderCellDef> Bandera </th>
       <td mat-cell *matCellDef="let element"><img class="card-img-top" src="{{element.flag}}" alt="Card image cap"> </td>
     </ng-container>
+
+    <ng-container matColumnDef="seleccionar">
+      <th mat-header-cell *matHeaderCellDef> Seleccionar </th>
+      <td mat-cell *matCellDef="let element"><button (click)="onSeleccionarPais(element)" mat-button>Seleccionar</button> </td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
