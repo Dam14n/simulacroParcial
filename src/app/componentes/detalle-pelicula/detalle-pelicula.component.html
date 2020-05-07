@@ -1,15 +1,15 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{pelicula.nombre}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="{{pelicula.foto}}" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        Cantidad de Publico: {{pelicula.cantidadDePublico}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button (click)="onBorrarPelicula()" mat-raised-button color="primary">BORRAR</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{pelicula.nombre}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{pelicula.foto}}" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      Cantidad de Publico: {{pelicula.cantidadDePublico}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="mostrarBorrar">
+    <button (click)="onBorrarPelicula()" mat-raised-button color="primary">BORRAR</button>
+  </mat-card-actions>
+</mat-card>

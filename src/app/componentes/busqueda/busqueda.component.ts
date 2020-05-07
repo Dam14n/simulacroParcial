@@ -13,6 +13,8 @@ import { PeliculasService } from './../../servicios/peliculas.service';
 export class BusquedaComponent implements OnInit {
   listadoPeliculas: Array<Pelicula>;
   listadoActores: Array<Actor>;
+  mostrarActores = false;
+  peliculaSeleccionada: Pelicula;
 
   constructor(private router: Router, private peliculaService: PeliculasService, private actorService: ActorService) {
     this.listadoPeliculas = this.peliculaService.obtenerPeliculas();
@@ -24,6 +26,12 @@ export class BusquedaComponent implements OnInit {
 
   navegarA(link: string) {
     this.router.navigate([link]);
+  }
+
+  seleccionarPelicula(pelicula: Pelicula) {
+    this.peliculaSeleccionada = pelicula;
+    this.mostrarActores = true;
+    this.listadoActores = pelicula.obtenerActores();
   }
 
 }

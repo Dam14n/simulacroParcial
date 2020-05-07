@@ -1,5 +1,10 @@
 <app-menu></app-menu>
 <div class="listado-container">
-  <app-tabla-peliculas [listadoPeliculas]="listadoPeliculas"></app-tabla-peliculas>
-  <app-tabla-actores [listadoActores]="listadoActores"></app-tabla-actores>
+  <app-tabla-peliculas [listadoPeliculas]="listadoPeliculas" (seleccionarPelicula)="seleccionarPelicula($event)">
+  </app-tabla-peliculas>
+  <div class="detalles-container">
+    <app-detalle-pelicula *ngIf="peliculaSeleccionada" [pelicula]="peliculaSeleccionada" [mostrarBorrar]="false">
+    </app-detalle-pelicula>
+    <app-tabla-actores *ngIf="mostrarActores" [listadoActores]="listadoActores"></app-tabla-actores>
+  </div>
 </div>

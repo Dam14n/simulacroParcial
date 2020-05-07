@@ -5,15 +5,22 @@
 }
 
 app-tabla-peliculas {
+  width: 50%;
   margin: 20px;
 }
 
 .listado-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 app-tabla-actores {
   margin: 20px;
   align-self: center;
+}
+
+.detalles-container {
+  display: flex;
+  margin: 20px;
 }

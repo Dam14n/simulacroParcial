@@ -48,4 +48,12 @@ export class Pelicula {
     public agregarActor(actor: Actor) {
         this.actores.push(actor);
     }
+
+    obtenerActores(): Actor[] {
+        return this.actores;
+    }
+
+    agregarActores(actores: Actor[]) {
+        this.actores.push(...actores);
+    }
 }

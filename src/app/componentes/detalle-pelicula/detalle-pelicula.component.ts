@@ -9,6 +9,7 @@ import { Pelicula } from './../../modelo/Pelicula';
 export class DetallePeliculaComponent implements OnInit {
   @Output() borrarPelicula = new EventEmitter<Pelicula>();
   @Input() pelicula: Pelicula;
+  @Input() mostrarBorrar = true;
 
   constructor() { }
 
