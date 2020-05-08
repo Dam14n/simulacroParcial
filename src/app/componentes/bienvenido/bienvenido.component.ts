@@ -12,8 +12,8 @@ export class BienvenidoComponent implements OnInit {
   constructor(private peliculaService: PeliculasService, private actorService: ActorService) { }
 
   ngOnInit(): void {
-    this.peliculaService.cargarPeliculas();
     this.actorService.cargarActores();
+    this.peliculaService.cargarPeliculas();
   }
 
 }
