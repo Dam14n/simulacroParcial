@@ -9,7 +9,7 @@
     <p> Region: {{pais.region}} </p>
     <p> Cantidad de poblacion: {{pais.population}} </p>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="mostrarDisabled">
     <button (click)="onDisabledCountry()" mat-raised-button color="primary">DESHABILITAR</button>
   </mat-card-actions>
 </mat-card>

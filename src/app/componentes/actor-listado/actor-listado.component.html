@@ -1,4 +1,6 @@
 <app-menu></app-menu>
 <div class="actores-container">
-  <app-tabla-actores [listadoActores]="listadoActores"></app-tabla-actores>
+  <app-tabla-actores [listadoActores]="listadoActores" (seleccionarActor)="seleccionarActor($event)">
+  </app-tabla-actores>
+  <app-detalle-actor *ngIf="mostrarDetalles" [actor]="actor"></app-detalle-actor>
 </div>

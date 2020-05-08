@@ -5,3 +5,12 @@
 .example-header-image {
   background-size: cover;
 }
+
+.detalles-container {
+  display: flex;
+  margin: 10px;
+}
+
+mat-card {
+  margin: 20px;
+}

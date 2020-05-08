@@ -9,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorListadoComponent implements OnInit {
   listadoActores: Array<Actor>;
+  actor: Actor;
+  mostrarDetalles = false;
 
   constructor(private actorService: ActorService) {
     this.listadoActores = this.actorService.obtenerActores();
   }
 
   ngOnInit(): void {
+  }
+
+  seleccionarActor(actor: Actor) {
+    this.mostrarDetalles = true;
+    this.actor = actor;
   }
 
 }

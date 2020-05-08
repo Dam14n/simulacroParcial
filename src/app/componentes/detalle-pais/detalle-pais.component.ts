@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DetallePaisComponent implements OnInit {
   @Output() disableCountry = new EventEmitter<any>();
   @Input() pais: any;
+  @Input() mostrarDisabled = true;
 
   constructor() { }
 

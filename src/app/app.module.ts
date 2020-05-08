@@ -29,6 +29,7 @@ import { TablaPeliculasComponent } from './componentes/tabla-peliculas/tabla-pel
 import { PaisesServiceService } from './servicios/paises-service.service';
 import { PeliculasService } from './servicios/peliculas.service';
 import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.co
     MenuComponent,
     PaisesListadoComponent,
     TablaPaisesComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    DetalleActorComponent
   ],
   imports: [
     BrowserModule,
